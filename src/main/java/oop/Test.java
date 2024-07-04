@@ -16,6 +16,13 @@ public class Test {
         morti.setMale(true);
         morti.setWeight(12.00f);
 
+        Dog dog1 = new Dog();
+        Dog dog2 = new Dog();
+
         morti.printDetails();
+        System.out.println("----");
+        dog1.printDetails();
+        System.out.println("----");
+        dog2.printDetails();
     }
 }

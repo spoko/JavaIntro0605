@@ -4,6 +4,14 @@ public class Dog extends Pet{//Dog inherits from Pet because Dog IS A Pet
     //fields or instance variables
     private boolean hasTail;//specific characteristics for a Dog
 
+    //constructor type I
+    public Dog(){
+        setWeight(1);
+        setName("sharo");
+        setMale(true);
+        setAge((byte) 1);
+    }
+
     //methods i.e. actions
     public void bark(){
         System.out.printf("%s is barking", getName());
