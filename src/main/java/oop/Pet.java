@@ -7,9 +7,19 @@ public class Pet {
     private float weight;
     private boolean isMale;
     private byte age;
-    private String possibleIllnesses;
-
     private Address address;//aggregation
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        if (!address.equals(null)){
+            this.address = address;
+        }else {
+            System.out.println("ERROR: invalid entry for address!");
+        }
+    }
 
     //properties (special methods - setters and getters)
     public Breed getBreed() {
@@ -59,18 +69,6 @@ public class Pet {
 
     }
 
-    public String getPossibleIllnesses() {
-        return possibleIllnesses;
-    }
-
-    public void setPossibleIllnesses(String possibleIllnesses) {
-        if (!possibleIllnesses.isEmpty()){
-            this.possibleIllnesses = possibleIllnesses;
-        }else {
-            System.out.println("Error: Invalid entry for possible illnesses");
-        }
-    }
-
     public String getName() {
         return name;
     }
@@ -97,8 +95,9 @@ public class Pet {
     }
 
     public void printDetails(){
-        System.out.printf("Dog name is %s. it weights %.2f. It is %d year(s) old. The dog is %s.\n",
-                name, weight, age, getSex());
+        System.out.printf("Dog name is %s. it weights %.2f. It is %d year(s) old. The dog is %s. " +
+                        "And the dog is located in %s\n",
+                name, weight, age, getSex(), address.toString());
     }
 
     public void makeSomeNoise(){
@@ -121,5 +120,18 @@ public class Pet {
         }else {
             return "female";
         }
+    }
+
+    //constructor type II
+    public Pet(String name, float weight, Breed breed, boolean isMale, byte age, Address address){
+        setName(name);
+        setWeight(weight);
+        setBreed(breed);
+        setMale(isMale);
+        setAge(age);
+        setAddress(address);
+    }
+    public Pet(){
+
     }
 }

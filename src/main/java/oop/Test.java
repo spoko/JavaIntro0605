@@ -6,9 +6,10 @@ public class Test {
         Breed frenchBulldog = new Breed("French Bulldog",
                 "playful, snoring, farting, small, dull, stubborn",
                 "Stomach illness, lower back issues");
-        //frenchBulldog.setPossibleIllnesses("Stomach illness, lower back issues");
-        //frenchBulldog.setBreedName("French Bulldog");
-        //frenchBulldog.setCharacteristics("playful, snoring, farting, small, dull, stubborn");
+        Address caneCorsoAddress = new Address("Bulgaria", "Razgrad", 7200,
+                "Hristo Smirnenski 10");
+        Address newTestAddress = new Address(caneCorsoAddress);
+        newTestAddress.setLocation("different than cane corso location");
 
         morti.setWeight(3.56f);
         morti.setBreed(frenchBulldog);
@@ -19,10 +20,24 @@ public class Test {
         Dog dog1 = new Dog();
         Dog dog2 = new Dog();
 
+        morti.setAddress(newTestAddress);
         morti.printDetails();
         System.out.println("----");
+        dog1.setAddress(newTestAddress);
         dog1.printDetails();
         System.out.println("----");
+        dog2.setAddress(newTestAddress);
         dog2.printDetails();
+
+        //creating a new dog with constructors with parameters (type II)
+        Breed caneCorso = new Breed("Cane Corso", "Big body, big ears", "none");
+
+        newTestAddress.setLocation("different than cane corso location");
+
+        Dog arni = new Dog("Anrni", 50f, caneCorso, true,  (byte) 8,
+                caneCorsoAddress,true);
+
+        System.out.println("----");
+        arni.printDetails();
     }
 }

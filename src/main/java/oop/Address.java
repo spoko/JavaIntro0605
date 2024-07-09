@@ -53,4 +53,37 @@ public class Address {
             System.out.println("Error: invalid entry for location");
         }
     }
+
+    //constructor type II
+    public Address(String country, String city, int zipCode, String location){
+        setCountry(country);
+        setCity(city);
+        setZipCode(zipCode);
+        setLocation(location);
+    }
+
+    public Address(String country, String city, int zipCode){
+        setCountry(country);
+        setCity(city);
+        setZipCode(zipCode);
+    }
+
+    public Address(String country, int zipCode){
+        setCountry(country);
+        setZipCode(zipCode);
+    }
+
+    //constructor type III - copy constructor
+    public Address(Address address){
+        setCity(address.city);
+        setCountry(address.country);
+        setZipCode(address.zipCode);
+        setLocation(address.location);
+    }
+
+    //method override (method that came from Object class)
+    public String toString(){
+        return String.format("The country is %s. The City is %s. Zip Code is %d. " +
+                "Specific location is %s", country, city, zipCode, location);
+    }
 }
