@@ -59,13 +59,19 @@ public class Person {
             }else{
                 productNamesInTheBag += product.getName();
             }
+        }
 
+        if(bagOfProducts.size() > 1){
+            productNamesInTheBag = trimEnd(productNamesInTheBag);
         }
 
         System.out.printf("%s - %s\n", name, productNamesInTheBag);
     }
 
     //internal method
-//    private String trimEnd(String items){
-//    }
+    private String trimEnd(String items){
+        items = items.trim(); //remove the empty space at the end
+        items = items.substring(0, items.length() - 1);//removes the last , of the string
+        return items;
+    }
 }
