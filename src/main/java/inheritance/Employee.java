@@ -1,6 +1,9 @@
 package inheritance;
 
-public class Employee {
+import inheritance.interfaces.JuniorActions;
+import inheritance.interfaces.SeniorActions;
+
+public class Employee extends AnnualOperations implements JuniorActions, SeniorActions {
     private String name;
     private String startDate;
     private double salary;
@@ -47,5 +50,39 @@ public class Employee {
         setName(name);
         setStartDate(startDate);
         setSalary(salary);
+    }
+
+    @Override
+    public void calculateAnnualBonus(boolean isTargetAchieved) {
+        if(isTargetAchieved){
+            System.out.println("Bonus is 2000");
+        }else {
+            System.out.println("Bonus is 500");
+        }
+    }
+
+    @Override
+    public void askQuestions() {
+        System.out.printf("%s is asking questions\n", name);
+    }
+
+    @Override
+    public void takeTrainings() {
+        System.out.printf("%s is taking a training\n", name);
+    }
+
+    @Override
+    public void giveHelp() {
+        System.out.printf("%s is helping\n", name);
+    }
+
+    @Override
+    public void planTrainings() {
+        System.out.printf("%s is planing trainings\n", name);
+    }
+
+    @Override
+    public void giveFeedback() {
+        System.out.printf("%s is giving feedback\n", name);
     }
 }

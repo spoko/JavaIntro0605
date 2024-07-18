@@ -19,4 +19,21 @@ public class Developer extends Employee{
         super(name, startDate, salary);
         setProgramingLanguage(programingLanguage);
     }
+
+    public void calculateAnnualBonus(boolean isTargetAchieved){
+        if(isTargetAchieved){
+            System.out.println("Bonus is 1000");
+        }else {
+            System.out.println("Bonus is a minimal one 100");
+        }
+    }
+
+    //method overload i.e. compile time polymorphism
+    public void calculateAnnualBonus(boolean isTargetAchieved, double baseBonus){
+        if(isTargetAchieved){
+            System.out.println("Bonus is 1000 + " + baseBonus);
+        }else {
+            System.out.println("Bonus is " + baseBonus);
+        }
+    }
 }
