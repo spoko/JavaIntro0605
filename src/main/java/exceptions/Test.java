@@ -12,9 +12,11 @@ public class Test {
         }
 
         try{
-            System.out.println(2/0);
+            System.out.println(2/2);
         }catch (ArithmeticException e){
             throw new CookieMonsterException(e.getMessage(), 2);
+        }finally {
+            System.out.println("i`ll be always execute");
         }
 
         System.out.println("End");
