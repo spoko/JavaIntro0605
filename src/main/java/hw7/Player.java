@@ -17,7 +17,7 @@ public class Player {
     }
 
     public void setStats(PlayerStatistics stats){
-        if (!stats.equals(null)){
+        if (stats != null){
             this.stats = stats;
         }else {
         //todo throw exception
